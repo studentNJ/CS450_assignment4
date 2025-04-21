@@ -15,7 +15,7 @@ class FileUpload extends Component {
 
         d3.csv(url).then((data) => { // Use d3.csv to parse the CSV data (asynchronously)
           const formattedData = data.map(d => ({ // Format the data
-            Date: d.Date,
+            Date: new Date(d.Date),
             GPT4: +d['GPT-4'],
             Gemini: +d['Gemini'],
             Palm2: +d['PaLM-2'],
